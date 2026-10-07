@@ -1,0 +1,94 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subaru Power Planner — Build Smarter</title><meta name="description" content="BuildAFlat4 helps WRX and STI owners plan conservative horsepower goals, supporting modifications, reliability upgrades and parts budgets."><style>
+:root{--bg:#0b0d10;--card:#15181d;--card2:#1b1f24;--line:#30353c;--txt:#f5f5f5;--mut:#adb4bd;--red:#d71932;--green:#62d477;--gold:#e8bb57}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:Arial,sans-serif}header{padding:17px 5%;background:#080a0c;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900;font-size:23px}.logo b{color:var(--red)}.money{font-size:12px;color:var(--mut)}
+.hero{padding:52px 5%;background:linear-gradient(90deg,#080a0cf2,#080a0c66),url("subie_hero_v2.png") center/cover;min-height:310px;display:flex;align-items:end}.hero h1{font-size:clamp(36px,6vw,70px);margin:8px 0}.hero p{max-width:720px;color:#ddd;font-size:17px}.pill{display:inline-block;border-radius:99px;padding:7px 10px;background:#292d32;font-size:11px;font-weight:bold}.red{background:var(--red)}
+.wrap{max-width:1450px;margin:auto;padding:25px 4% 60px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}.step{padding:12px;background:var(--card);border:1px solid var(--line);border-radius:8px;font-weight:bold;font-size:12px}.step b{color:var(--red)}@media(max-width:750px){.steps{grid-template-columns:1fr 1fr}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:19px;margin-bottom:18px}h2,h3{margin-top:0}.controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:600px){.controls{grid-template-columns:1fr}}label{font-size:12px;color:var(--mut);font-weight:bold}select{width:100%;padding:12px;margin-top:6px;background:#0f1216;color:white;border:1px solid var(--line);border-radius:7px}
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:12px 0}@media(max-width:650px){.mods{grid-template-columns:1fr}}.mod{padding:10px;background:var(--card2);border:1px solid var(--line);border-radius:7px;color:#ddd}.btn{border:0;border-radius:7px;padding:12px 15px;background:var(--red);color:white;font-weight:900;cursor:pointer}.btn2{background:#252a30}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}@media(max-width:800px){.plans{grid-template-columns:1fr}}.plan{padding:15px;border:1px solid var(--line);background:var(--card2);border-radius:9px;cursor:pointer}.plan.active{outline:2px solid var(--red)}.plan h3{margin-bottom:5px}.plan p{color:var(--mut);font-size:12px}.metricrow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}@media(max-width:750px){.metricrow{grid-template-columns:1fr 1fr}}.metric{background:#0f1216;border:1px solid var(--line);border-radius:8px;padding:13px}.metric small{display:block;color:var(--mut)}.metric strong{font-size:19px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#101317;color:#ddd}.price{white-space:nowrap}.buy{display:inline-block;padding:7px 9px;background:var(--red);color:white;text-decoration:none;border-radius:6px;font-weight:bold;margin:2px}.compare{background:#30353b}.owned{color:var(--green);font-weight:bold}.need{color:#ff8290;font-weight:bold}.why{color:var(--mut);font-size:12px}.total{font-size:30px;font-weight:900}.premium{border:1px solid #6d5730;background:linear-gradient(135deg,#1b1812,#15181d)}.premium b{color:var(--gold)}.fine{font-size:11px;color:#9299a2;line-height:1.5}.hide{display:none}
+
+/* BuildAFlat4 v2 generation selector */
+.generation-showcase{margin:18px 0 24px;padding:18px;border:1px solid #2a2e35;border-radius:18px;background:#111318}
+.generation-showcase h2{margin:0 0 6px;font-size:clamp(22px,5vw,34px)}
+.generation-showcase .sub{color:#aeb4bf;margin:0 0 16px;line-height:1.45}
+.generation-image{width:100%;display:block;border-radius:14px;border:1px solid #30343b}
+.generation-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.gen-btn{appearance:none;border:1px solid #343941;background:#171a20;color:#fff;border-radius:12px;padding:13px 10px;font-weight:800;cursor:pointer}
+.gen-btn:hover,.gen-btn.active{border-color:#ef3340;background:#22171a}
+.gen-btn small{display:block;color:#aeb4bf;font-weight:600;margin-top:3px}
+@media(max-width:700px){.generation-showcase{padding:14px}.generation-buttons{grid-template-columns:1fr}.gen-btn{text-align:left;padding:14px}}
+
+</style></head><body>
+<header><div class="logo">BUILD A <b>FLAT 4</b></div><div class="money">PLAN YOUR POWER. BUILD IT RIGHT.</div></header>
+
+<section class="generation-showcase" aria-labelledby="choose-platform">
+  <h2 id="choose-platform">Choose your WRX platform</h2>
+  <p class="sub">Start with the car you own. Your selection loads the matching platform in the power planner below.</p>
+  <img class="generation-image" src="assets/wrx-generations.jpeg" alt="Front views of 2015–2021 WRX, 2022–2026 WRX, and 2015–2021 WRX STI">
+  <div class="generation-buttons">
+    <button class="gen-btn" type="button" data-model="va">2015–2021 WRX<small>VA • FA20F</small></button>
+    <button class="gen-btn" type="button" data-model="vb">2022–2026 WRX<small>VB • FA24F</small></button>
+    <button class="gen-btn" type="button" data-model="sti">2015–2021 WRX STI<small>VA STI • EJ257</small></button>
+  </div>
+</section>
+
+<section class="hero"><div><span class="pill red">POWER + RELIABILITY + COST</span><h1>Build the power. Buy only what you need.</h1><p>Tell us what is already on your Subaru, choose a conservative WHP goal, then compare a Budget, Best Value or Reliability First path.</p></div></section>
+<main class="wrap"><div class="steps"><div><b>01</b> CURRENT BUILD</div><div><b>02</b> POWER GOAL</div><div><b>03</b> CHOOSE PATH</div><div><b>04</b> SHOP MISSING PARTS</div></div>
+<div class="grid"><div class="card"><h2>1. Your Current Build</h2><div class="controls"><label>MODEL / GENERATION<select id="model"><option value="vb">2022–2026 WRX • FA24F</option><option value="va">2015–2021 WRX • FA20DIT</option><option value="sti">2015–2021 STI • EJ257</option></select></label><label>FUEL<select id="fuel"><option>91 Octane</option><option selected>93 Octane</option><option>Ethanol Blend / Flex Fuel</option></select></label></div><div class="mods" id="mods"></div></div>
+<div class="card"><h2>2. Power Goal</h2><div class="controls"><label>TARGET WHP<select id="target"><option>300</option><option>350</option><option selected>400</option><option>450</option><option>500</option><option>550</option></select></label><label>USE<select><option selected>Daily / Street</option><option>Weekend Performance</option><option>Track / Competition</option></select></label></div><div class="metricrow"><div class="metric"><small>Current est.</small><strong id="current">Stock</strong></div><div class="metric"><small>Goal</small><strong id="goal">400 WHP</strong></div><div class="metric"><small>Parts owned</small><strong id="owned">0</strong></div><div class="metric"><small>Remaining</small><strong id="remain">—</strong></div></div></div></div>
+<div class="card"><h2>3. Choose Your Build Path</h2><div class="plans">
+<div class="plan" data-plan="budget"><h3>Budget</h3><span class="pill">LOWEST COST</span><p>Capable components while avoiding unnecessary upgrades.</p><strong id="budgetTotal">—</strong></div>
+<div class="plan active" data-plan="value"><h3>Best Value</h3><span class="pill red">RECOMMENDED</span><p>Better thermal capacity and headroom without overspending.</p><strong id="valueTotal">—</strong></div>
+<div class="plan" data-plan="reliable"><h3>Reliability First</h3><span class="pill">MORE HEADROOM</span><p>Supporting systems and thermal/crankcase management prioritized.</p><strong id="reliableTotal">—</strong></div></div></div>
+<div class="card"><h2>4. Missing Parts & Shopping List</h2><div style="overflow:auto"><table><thead><tr><th>Status</th><th>Part</th><th>Recommended option</th><th>Est. street price</th><th>Reason</th><th>Shop</th></tr></thead><tbody id="parts"></tbody></table></div><p class="fine">Prices are planning estimates, not live retailer quotes. Verify exact fitment, emissions legality and current pricing before purchase. “Shop” links are placeholders until retailer/affiliate relationships are activated.</p></div>
+<div class="grid"><div class="card"><h3>Remaining Build Estimate</h3><div class="total" id="total">$0–$0</div><p class="why">Parts only. Professional tuning, labor, tax, shipping and unexpected maintenance are not included.</p><button class="btn" onclick="alert('Retailer/affiliate links will be connected here once your accounts are approved.')">SHOP THIS BUILD</button></div>
+<div class="card premium"><h3>Premium Build Report <b>$14.99</b></h3><p>Future paid upgrade: save the exact build, ordered upgrade sequence, three budget paths, compatibility notes, reliability checklist and printable parts list.</p><button class="btn btn2" onclick="alert('Checkout is not connected yet. Connect a payment processor before accepting payment.')">GET FULL BUILD REPORT</button></div></div>
+<div class="card"><h3>How this site earns money</h3><p class="why"><b style="color:white">1. Affiliate parts purchases:</b> eligible retailer links can earn a commission when a visitor buys. &nbsp; <b style="color:white">2. Premium reports:</b> optional paid build reports. &nbsp; <b style="color:white">3. Qualified shop/tuner referrals:</b> only through disclosed agreements. &nbsp; <b style="color:white">4. Sponsored products:</b> clearly labeled and kept separate from compatibility/reliability logic.</p><p class="fine">Affiliate disclosure: When affiliate links are enabled, Subaru Power Planner may earn a commission from qualifying purchases at no additional cost to the customer. Recommendations should remain based on fitment, build requirements and value—not commission size.</p></div></main>
+<script>
+const data={
+vb:[["intake","Intake / turbo inlet","COBB / GrimmSpeed application-specific option",[320,480]],["intercooler","Intercooler","Process West / ETS application-specific option",[850,1400]],["ebcs","3-port EBCS","Application-specific boost control solenoid",[120,180]],["fuel","Fuel system","Target/fuel-specific fueling solution",[450,1500]],["turbo","Turbo upgrade","Proven FA24F-compatible turbo",[1800,2700]],["aos","AOS / crankcase","IAG / Radium application-specific solution",[400,600]],["cooling","Cooling","Oil/radiator thermal-management package",[450,1100]]],
+va:[["intake","Intake","COBB / GrimmSpeed FA20DIT-compatible option",[300,450]],["intercooler","Intercooler","Process West / ETS FA20DIT option",[800,1300]],["ebcs","3-port EBCS","FA20DIT-compatible EBCS",[120,180]],["fuel","Fuel system","FA20DIT target-specific fueling",[500,1600]],["turbo","Turbo upgrade","Proven FA20DIT-compatible turbo",[1700,2500]],["aos","AOS / crankcase","IAG / Radium compatible solution",[400,600]],["cooling","Cooling","Oil/radiator thermal-management package",[450,1100]]],
+sti:[["intake","Intake","COBB / GrimmSpeed EJ257-compatible option",[300,450]],["intercooler","Intercooler","Process West / ETS STI option",[850,1500]],["ebcs","3-port EBCS","EJ257-compatible EBCS",[120,180]],["fuel","Fuel system","Injectors/pump/fuel solution matched to target",[900,1800]],["turbo","Turbo upgrade","Proven EJ257-compatible turbo",[1700,2600]],["aos","AOS / crankcase","IAG or equivalent EJ solution",[400,600]],["cooling","Cooling","Oil/radiator thermal-management package",[500,1200]]]};
+let selected=new Set(),path="value";
+function renderMods(){selected=new Set();mods.innerHTML=data[model.value].map(p=>`<label class="mod"><input type="checkbox" data-id="${p[0]}" onchange="toggle(this)"> ${p[2]}</label>`).join("");calc()}
+function toggle(e){e.checked?selected.add(e.dataset.id):selected.delete(e.dataset.id);calc()}
+function reqs(t,m,p){let r=new Set(["intercooler","ebcs","aos"]);if(t<=300)r=new Set(["aos"]);if(t>=350)r.add("fuel");if(t>=400)r.add("cooling");if((m=="va"&&t>=350)||(m=="sti"&&t>=350)||(m=="vb"&&t>=425))r.add("turbo");if(p=="budget"&&t<400)r.delete("cooling");if(p=="reliable"){r.add("cooling");r.add("aos");if(t>=350)r.add("intake")}return r}
+function estimate(p){let t=+target.value,m=model.value,r=reqs(t,m,p),lo=0,hi=0;for(const x of data[m])if(r.has(x[0])&&!selected.has(x[0])){let mult=p=="budget"?.9:p=="reliable"?1.12:1;lo+=x[3][0]*mult;hi+=x[3][1]*mult}return [Math.round(lo/10)*10,Math.round(hi/10)*10]}
+function calc(){let t=+target.value,m=model.value;base=m=="vb"?260:m=="va"?230:250;let whp=base+selected.size*10+(selected.has("turbo")?45:0);current.textContent="~"+whp+" WHP";goal.textContent=t+" WHP";owned.textContent=selected.size;let a=estimate("budget"),b=estimate("value"),c=estimate("reliable");budgetTotal.textContent="$"+a[0].toLocaleString()+"–$"+a[1].toLocaleString();valueTotal.textContent="$"+b[0].toLocaleString()+"–$"+b[1].toLocaleString();reliableTotal.textContent="$"+c[0].toLocaleString()+"–$"+c[1].toLocaleString();draw()}
+function draw(){let t=+target.value,m=model.value,r=reqs(t,m,path),lo=0,hi=0,rows=[];for(const x of data[m]){if(!r.has(x[0]))continue;let own=selected.has(x[0]);if(!own){let mult=path=="budget"?.9:path=="reliable"?1.12:1;lo+=x[3][0]*mult;hi+=x[3][1]*mult}rows.push(`<tr><td class="${own?"owned":"need"}">${own?"OWNED":"NEEDED"}</td><td>${x[1]}</td><td>${x[2]}</td><td class="price">${own?"—":"$"+x[3][0].toLocaleString()+"–$"+x[3][1].toLocaleString()}</td><td class="why">${x[0]=="aos"?"Crankcase/oil-vapor management":x[0]=="cooling"?"Thermal reliability":x[0]=="fuel"?"Fuel capacity for target":x[0]=="turbo"?"Airflow required for target":"Supports a stable calibrated combination"}</td><td>${own?"":"<a class='buy compare' href='#' onclick='event.preventDefault();alert(\"Affiliate retailer link goes here after approval.\")'>COMPARE</a>"}</td></tr>`)}parts.innerHTML=rows.join("");total.textContent="$"+Math.round(lo).toLocaleString()+"–$"+Math.round(hi).toLocaleString();remain.textContent=[...r].filter(x=>!selected.has(x)).length+" parts"}
+document.querySelectorAll(".plan").forEach(x=>x.onclick=()=>{document.querySelectorAll(".plan").forEach(y=>y.classList.remove("active"));x.classList.add("active");path=x.dataset.plan;draw()});model.onchange=renderMods;target.onchange=calc;renderMods();
+</script>
+<script>
+(function(){
+  const select = document.getElementById('model');
+  const buttons = document.querySelectorAll('.gen-btn');
+  if(!select || !buttons.length) return;
+
+  const matchers = {
+    va: t => /2015.*2021/i.test(t) && /WRX/i.test(t) && !/STI/i.test(t),
+    vb: t => /2022.*2026/i.test(t) && /WRX/i.test(t) && !/STI/i.test(t),
+    sti: t => /2015.*2021/i.test(t) && /STI/i.test(t)
+  };
+
+  function sync(){
+    const text = select.options[select.selectedIndex]?.text || '';
+    buttons.forEach(b => b.classList.toggle('active', matchers[b.dataset.model]?.(text)));
+  }
+
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    const matcher = matchers[btn.dataset.model];
+    const option = Array.from(select.options).find(o => matcher(o.text));
+    if(option){
+      select.value = option.value;
+      select.dispatchEvent(new Event('change', {bubbles:true}));
+      sync();
+      select.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }));
+  select.addEventListener('change', sync);
+  sync();
+})();
+</script>
+
+</body></html>
